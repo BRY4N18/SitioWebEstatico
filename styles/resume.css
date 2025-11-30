@@ -2,14 +2,21 @@
     box-sizing: border-box;
 }
 
-main{
-    min-width: 800px;
+.main-content{
+    max-width: 63%;
 }
 
-.text-balance{
-    text-wrap: balance;
+.text-pretty{
+    text-wrap: pretty;
+    text-align: justify;
 }
 
 .padding-pequeño{
     padding: 0.25rem 0.5rem;
 }
+
+figure:hover{
+    transform: translateY(-3px) translateX(-2px);
+    box-shadow: 8px 8px 0px 0px #282828;
+}
+
