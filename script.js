@@ -1,7 +1,7 @@
 const teamData = [
     {
         name: "Belinda Toaquiza",
-        mail: "btoaquizaz@uteq.edu.ec",
+        mail: "Btoaquizaz@uteq.edu.ec",
         github: "BelindaTZ",
         linkgithub: "https://github.com/BelindaTZ",
         levelenglish: "B2",
@@ -13,7 +13,7 @@ const teamData = [
     },
     {
         name: "Carlos Manotoa",
-        mail: "cmanotoaa@uteq.edu.ec",
+        mail: "Cmanotoaa@uteq.edu.ec",
         github: "CarlosMC2004",
         linkgithub: "https://github.com/CarlosMC2004",
         levelenglish: "B1",
@@ -37,7 +37,7 @@ const teamData = [
     },
     {
         name: "Justyn Castro",
-        mail: "jcastrop7@uteq.edu.ec",
+        mail: "Jcastrop7@uteq.edu.ec",
         github: "MOIOLDWIN",
         linkgithub: "https://github.com/MOIOLDWIN",
         levelenglish: "B1",
@@ -46,48 +46,43 @@ const teamData = [
         experiencetitle: "CIDU",
         experienceyear: "2024",
         experiencedesc: "En el CIDU aprendí a colaborar de forma efectiva, comunicar ideas con mi equipo y sacar adelante proyectos trabajando juntos."
+    },
+    {
+        name: "Anthony Arana",
+        mail: "aaranam5@uteq.edu.ec",
+        github: "AnthonyArana1725",
+        linkgithub: "https://github.com/AnthonyArana1725",
+        levelenglish: "B1",
+        imageprofile: "https://sga.uteq.edu.ec/media/fotos/2023/05/18/foto_2023518184032.jpg",
+        profiledescription: "Soy estudiante de 5 semestre de la ingeniería de software. Me gusta programar, asi se aprende de prueba y error",
+        experiencetitle: "CIDU",
+        experienceyear: "2024",
+        experiencedesc: "Desarrolle el trabajo colaborativo"
     }
 ]
 
-document.addEventListener('DOMContentLoaded', () => {
+const params = new URLSearchParams(window.location.search)
+const memberId = params.get('id')
 
-    // A. Detectar si estamos en la página correcta buscando un elemento clave
-    const nombreElemento = document.getElementById('name');
+const Name = document.getElementById('name')
+const Mail = document.getElementById('mail')
+const Github = document.getElementById('github')
+const LevelEnglish = document.getElementById('levelenglish')
+const ImageProfile = document.getElementById('imageprofile')
+const ProfileDescription = document.getElementById('profiledescription')
+const ExperienceTitle = document.getElementById('experiencetitle')
+const ExperienceYear = document.getElementById('experienceyear')
+const ExperienceDesc = document.getElementById('experiencedesc')
 
-    // Si no existe el elemento 'name', significa que no estamos en resume.html, así que no hacemos nada.
-    if (!nombreElemento) return;
-
-    // B. Obtener el ID de la URL (ej: resume.html?id=0)
-    const params = new URLSearchParams(window.location.search);
-    const memberId = params.get('id');
-
-    // C. Validar y Rellenar
-    if (memberId !== null && teamData[memberId]) {
-        const member = teamData[memberId];
-
-        // Texto simple
-        document.getElementById('name').textContent = member.name;
-        document.getElementById('levelenglish').textContent = member.levelenglish;
-        document.getElementById('profiledescription').textContent = member.profiledescription;
-        document.getElementById('experiencetitle').textContent = member.experiencetitle;
-        document.getElementById('experienceyear').textContent = member.experienceyear;
-        document.getElementById('experiencedesc').textContent = member.experiencedesc;
-
-        // Imagen
-        document.getElementById('imageprofile').src = member.imageprofile;
-
-        // Enlaces (Email y Github)
-        const mailLink = document.getElementById('mail');
-        mailLink.textContent = member.mail;       // Lo que se ve
-        mailLink.href = "mailto:" + member.mail;  // Lo que hace al dar click
-
-        const githubLink = document.getElementById('github');
-        githubLink.textContent = member.github;   // Lo que se ve
-        githubLink.href = member.linkgithub;      // A donde lleva
-    } else {
-        // Opcional: Si no hay ID o el ID está mal, redirigir al inicio o mostrar error
-        console.error("Usuario no encontrado o ID no proporcionado");
-        document.getElementById('name').textContent = "Usuario no encontrado";
-    }
-});
-
+const member = teamData[memberId]
+Name.textContent = member.name
+Mail.textContent = "mailto:"+member.mail
+Mail.href = member.mail
+Github.textContent = member.github
+Github.href = member.linkgithub
+LevelEnglish.textContent = member.levelenglish
+ImageProfile.src = member.imageprofile
+ProfileDescription.textContent = member.profiledescription
+ExperienceTitle.textContent = member.experiencetitle
+ExperienceYear.textContent = member.experienceyear
+ExperienceDesc.textContent = member.experiencedesc
