@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+
+main{
+    min-width: 800px;
+}
+
+.text-balance{
+    text-wrap: balance;
+}
+
+.padding-pequeño{
+    padding: 0.25rem 0.5rem;
+}
