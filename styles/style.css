@@ -9,18 +9,6 @@ body{
     grid-template-rows: auto 1fr auto;
 }
 
-header{
-    background-color: #898787;
-}
-
-main{
-    background-color: #e6e6e6;
-}
-
-footer{
-    background-color: #898787;
-}
-
 .PiePagina{
     padding: 15px;
     margin: 0;
