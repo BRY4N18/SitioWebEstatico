@@ -25,6 +25,9 @@ const teamData = [
     }
 ]
 
+const params = new URLSearchParams(window.location.search)
+const memberId = params.get('id')
+
 const Name = document.getElementById('name')
 const Mail = document.getElementById('mail')
 const Github = document.getElementById('github')
@@ -36,8 +39,8 @@ const ExperienceYear = document.getElementById('experienceyear')
 const ExperienceDesc = document.getElementById('experiencedesc')
 
 
-function OpenProfile(id){
-    const member = teamData[id]
+function OpenProfile(memberId){
+    const member = teamData[memberId]
     Name.textContent = member.name
     Mail.textContent = "mailto:"+member.mail
     Mail.href = member.mail
