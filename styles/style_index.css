@@ -193,3 +193,8 @@
 .miembro button:hover {
     background-color: #474e55;
 }
+
+.LinkMiembro{
+    text-decoration: none;
+    color: white;
+}
